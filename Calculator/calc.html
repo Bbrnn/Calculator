@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <style>
+        #main{
+        width: 300px;
+        height: 280px;
+        background-color:bisque;
+        }
+
+        input{
+          width: 20%; 
+          height:40px;
+          font-size:20px;
+          margin: 5px;
+        }
+
+        #block{
+          width: 
+          87%;height:40px; 
+          background-color:gray
+        }
+
+    </style>
+  </head>
+
+  <body> 
+    <div id = "main">
+      <form name = "form">
+        <input type="text" name="T"placeholder="0"id="block"> <br>
+        <input type="button" value="1" onclick="form.T.value+=1">
+        <input type="button" value="2" onclick="form.T.value+=2">
+        <input type="button" value="3" onclick="form.T.value+=3">
+        <input type="button" value="+" onclick="add()">
+        <br>
+        <input type="button" value="4" onclick="form.T.value+=4">
+        <input type="button" value="5" onclick="form.T.value+=5">
+        <input type="button" value="6" onclick="form.T.value+=6">
+        <input type="button" value="-" onclick="sub()">
+        <br>
+        <input type="button" value="7" onclick="form.T.value+=7">
+        <input type="button" value="8" onclick="form.T.value+=8">
+        <input type="button" value="9" onclick="form.T.value+=9">
+        <input type="button" value="/" onclick="div()">
+        <br>
+        <input type="button" value="c" onclick="form.T.value=''">
+        <input type="button" value="0" onclick="form.T.value+=0">
+        <input type="button" value="=" onclick="form.T.value=eval(form.T.value)">
+        <input type="button" value="x" onclick="mul()">
+        <br>
+
+      </form>
+      </div>
+      
+      <script>//this code ensures that only one operator is used at one point
+
+        //addition
+        function add() {
+          var a=0 ,b=0;
+          a= form.T.value;
+          //checks the last digit
+          b=a.charAt (a.length-1);
+          if(b=='+' || b=='-' || b=='/' || b=='*') {
+            form.T.value=a.substring(0,a.length-1);
+            form.T.value+='+';
+          }else{
+            form.T.value+='+'
+          }
+        }
+
+        //subtraction
+          function sub() {
+          var a=0 ,b=0;
+          a= form.T.value;
+          //checks the last digit
+          b=a.charAt (a.length-1);
+          if(b=='+' || b=='-' || b=='/' || b=='*') {
+            form.T.value=a.substring(0,a.length-1);
+            form.T.value+='-';
+          }else{
+            form.T.value+='-'
+          }
+        }
+
+        //division
+        function div() {
+          var a=0 ,b=0;
+          a= form.T.value;
+          //checks the last digit
+          b=a.charAt (a.length-1);
+          if(b=='+' || b=='-' || b=='/' || b=='*') {
+            form.T.value=a.substring(0,a.length-1);
+            form.T.value+='/';
+          }else{
+            form.T.value+='/'
+          }
+        }
+
+        //multiplication
+        function mul() {
+          var a=0 ,b=0;
+          a= form.T.value;
+          //checks the last digit
+          b=a.charAt (a.length-1);
+          if(b=='+' || b=='-' || b=='/' || b=='*') {
+            form.T.value=a.substring(0,a.length-1);
+            form.T.value+='*';
+          }else{
+            form.T.value+='*'
+          }
+        }
+        
+      </script>
+
+
+   
+  </body>
+
+
+
+</html>
